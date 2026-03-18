@@ -141,23 +141,79 @@
        font-weight: bold !important;
     }
 
+    
+    
     /* Category Cards styling to match Image */
-    .category-minimal { background: transparent !important; border: none !important; border-radius: 0 !important; overflow: visible !important; }
-    .category-minimal .minimal-image-container { border-radius: 12px !important; overflow: hidden !important; border: none !important; padding: 0 !important; background: transparent !important; }
-    .category-minimal .minimal-image-container img { width: 100% !important; height: 100% !important; border-radius: 12px !important; }
+    .category-minimal { background: transparent !important; border: none !important; border-radius: 0 !important; overflow: visible !important; display: block !important; }
+    .category-minimal .minimal-image-container { 
+        border-radius: 12px !important; 
+        overflow: hidden !important; 
+        border: 1px solid #fce4e4 !important; 
+        padding: 5px !important; 
+        background: #ffffff !important; 
+        margin-bottom: 10px !important; 
+    }
+    .category-minimal .minimal-image-container img { 
+        width: 100% !important; 
+        height: 100% !important; 
+        border-radius: 12px !important; 
+        object-fit: contain !important; 
+        transform: scale(1) !important; 
+        transition: transform 0.3s ease !important; 
+    }
+    .category-minimal:hover .minimal-image-container img { transform: scale(1.05) !important; }
 
     .minimal-title {
-       font-size: 1.3rem !important;
-       font-weight: normal !important;
+       font-size: 1.1rem !important;
+       font-weight: 800 !important;
        margin-bottom: 8px !important;
     }
 
-    /* Keep the product image sizes */
-    .product-img { background: transparent !important; padding: 15px !important; display: flex; align-items: center; justify-content: center; height: 200px !important; margin-bottom: 15px; }
-    .product-img img { width: 100% !important; height: 100% !important; max-height: 100%; object-fit: contain !important; border-radius: 0 !important; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1)); transform: scale(1.25); transition: transform 0.3s ease; }
-    .product-card:hover .product-img img { transform: scale(1.35) !important; }
-    
-    .category-minimal:hover .minimal-image-container img { transform: scale(1.05) !important; }
+    /* Keep the product image sizes responsive */
+    .product-img { 
+        background: transparent !important; 
+        padding: 10px !important; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        height: 180px !important; 
+        margin-bottom: 15px; 
+    }
+    .product-img img { 
+        width: 100% !important; 
+        height: 100% !important; 
+        max-height: 100%; 
+        object-fit: contain !important; 
+        border-radius: 0 !important; 
+        filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1)); 
+        transform: scale(1) !important; 
+        transition: transform 0.3s ease; 
+    }
+    .product-card:hover .product-img img { transform: scale(1.1) !important; }
+
+    /* Mobile specifically */
+    @media (max-width: 768px) {
+        .category-minimal .minimal-image-container {
+            padding: 5px !important;
+            margin-bottom: 6px !important;
+        }
+        .minimal-title {
+            font-size: 0.75rem !important;
+            letter-spacing: 0.5px !important;
+            white-space: nowrap !important;
+            overflow: hidden !important;
+            text-overflow: ellipsis !important;
+            padding: 0 2px !important;
+        }
+        .product-img {
+            height: 90px !important;
+            padding: 5px !important;
+            margin-bottom: 5px !important;
+        }
+        .product-details .product-name {
+            font-size: 0.9rem !important;
+        }
+    }
 
     /* Category 'SEE ALL' button */
     .btn-outline-primary {
@@ -367,17 +423,8 @@
          border-color: #C8102E !important;
       }
       /* Bold larger text */
-      .minimal-title {
-         font-size: 1.1rem !important;
-         font-weight: 900 !important;
-      }
       h1, h2, h3, h4, h5, h6, .section-title {
          font-weight: 900 !important;
-      }
-      @media (max-width: 768px) {
-         .minimal-title {
-            font-size: 0.95rem !important;
-         }
       }
             /** Global bolder fonts for text **/
       body {
